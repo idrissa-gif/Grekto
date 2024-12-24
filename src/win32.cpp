@@ -2,7 +2,6 @@
 //   (c) 2002-2021 Vladimir Medvedev <vrm@bk.ru>
 //   http://greko.su
 
-#include <windows.h>
 #include <conio.h>
 #include "types.h"
 

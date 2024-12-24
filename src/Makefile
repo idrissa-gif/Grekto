@@ -1,7 +1,7 @@
 CPP = g++
-CPPFLAGS = -Wall -O3 -DFAST_BITBOARDS
+CPPFLAGS = -std=c++11 -pthread -Wall -O3 -DFAST_BITBOARDS
 
-BIN = r.exe
+BIN = GreKo
 
 OBJ = nnue.o        \
       misc.o        \
@@ -15,7 +15,7 @@ OBJ = nnue.o        \
       position.o    \
       search.o      \
       utils.o       \
-      win32.o
+      unix.o
 
 .PHONY: all clean
 
@@ -26,6 +26,7 @@ clean:
 
 $(BIN): $(OBJ)
 	$(CPP) $(CPPFLAGS) $(OBJ) -o $(BIN)
+	strip $(BIN)
 
 .o: .cpp
 	$(CPP) $(CPPFLAGS) -c $< -o $@
